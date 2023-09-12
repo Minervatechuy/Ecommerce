@@ -1,23 +1,22 @@
-version: '3'
-
+version: '3.1'
 services:
   wordpress:
-    image: wordpress:latest
+    image: wordpress:php7.2-apache
     ports:
-      - "8000:80"
+      - "8080:80"
     environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: password
-    volumes:
-      - ./wordpress:/var/www/html
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_NAME: wordpress
+    links:
+      - mysql:mysql
 
-  db:
-    image: mysql:latest
+  mysql:
+    image: mysql:8.0.13
+    command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./db:/var/lib/mysql
+      - ~/Ecommerce/data:/var/lib/mysql
