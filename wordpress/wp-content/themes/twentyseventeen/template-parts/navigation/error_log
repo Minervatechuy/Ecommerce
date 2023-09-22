@@ -1,0 +1,4 @@
+[16-Jul-2023 05:23:37 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function esc_attr_e() in /home1/alekandrita/public_html/wp-content/themes/twentyseventeen/template-parts/navigation/navigation-top.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-content/themes/twentyseventeen/template-parts/navigation/navigation-top.php on line 12
