@@ -1,8 +1,0 @@
-[14-Jul-2023 14:03:24 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function esc_url() in /home1/alekandrita/public_html/wp-content/themes/twentyseventeen/template-parts/footer/site-info.php:18
-Stack trace:
-#0 {main}
-  thrown in /home1/alekandrita/public_html/wp-content/themes/twentyseventeen/template-parts/footer/site-info.php on line 18
-[15-Jul-2023 07:51:49 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function is_active_sidebar() in /home1/alekandrita/public_html/wp-content/themes/twentyseventeen/template-parts/footer/footer-widgets.php:14
-Stack trace:
-#0 {main}
-  thrown in /home1/alekandrita/public_html/wp-content/themes/twentyseventeen/template-parts/footer/footer-widgets.php on line 14
