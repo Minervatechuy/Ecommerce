@@ -20,7 +20,7 @@ pipeline {
                     docker.image("${image_name}:${tag_image}").remove(force: true)
                 }
                 dir('jenkins') {
-                    docker.image("${image_name}:${tag_image}").build()
+                    docker.image("${image_name}:${tag_image}").build('')
                 }
             }
         }
