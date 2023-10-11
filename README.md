@@ -1,3 +1,3 @@
 # Ecommerce
 Plataforma de comercio electrónico para venta de simuladores de energías renovables.
-Esto es para probar si triggerea. Sigo agregando texto.  
+Las empresas clientes de Minerva podrán acceder a esta plataforma para realizar consultas.  
