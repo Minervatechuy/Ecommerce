@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    tools {
-        dockerTool 'Docker'
+    environment {
+        PATH = "$PATH:/usr/bin"
     }
 
     parameters {
@@ -16,20 +16,19 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    docker.image("${image_name}:${tag_image}").stop("${container_name}")
-                    docker.image("${image_name}:${tag_image}").remove(force: true)
+                    sh "docker stop ${container_name} || true"
+                    sh "docker rm ${container_name} || true"
+                    sh "docker rmi ${image_name}:${tag_image} || true"
                 }
                 dir('jenkins') {
-                    docker.image("${image_name}:${tag_image}").build('')
+                    sh "docker build -t ${image_name}:${tag_image} ."
                 }
             }
         }
 
         stage('deploy') {
             steps {
-                script {
-                    docker.image("${image_name}:${tag_image}").run("-d -p ${container_port}:80 --name ${container_name}")
-                }
+                sh "docker run -d -p ${container_port}:80 --name ${container_name} ${image_name}:${tag_image}"
             }
         }
     }
