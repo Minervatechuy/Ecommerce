@@ -1,35 +1,36 @@
 pipeline {
-  agent any
+    agent any
 
-  environment {
-    PATH = "$PATH:/usr/bin"
-  }
-
-  parameters {
-    string(name: 'container_name', defaultValue: 'objective_newton', description: 'Nombre del contenedor de Docker.')
-    string(name: 'image_name', defaultValue: 'jenkins/jenkins:lts-jdk17', description: 'Nombre de la imagen de Docker.')
-    string(name: 'tag_image', defaultValue: 'lts', description: 'Tag de la imagen de la página.')
-    string(name: 'container_port', defaultValue: '8080', description: 'Puerto que usa el contenedor')
-  }
-
-  stages {
-    stage('build') {
-      steps {
-        script {
-          sh "docker stop ${container_name} || true"
-          sh "docker rm ${container_name} || true"
-          sh "docker rmi ${image_name}:${tag_image} || true"
-        }
-        dir('jenkins') {
-          sh "docker build -t ${image_name}:${tag_image} ."
-        }
-      }
+    tools {
+        dockerTool 'Docker'
     }
 
-    stage('deploy') {
-      steps {
-        sh "docker run -d -p ${container_port}:80 --name ${container_name} ${image_name}:${tag_image}"
-      }
+    parameters {
+        string(name: 'container_name', defaultValue: 'objective_newton', description: 'Nombre del contenedor de Docker.')
+        string(name: 'image_name', defaultValue: 'jenkins/jenkins:lts-jdk17', description: 'Nombre de la imagen de Docker.')
+        string(name: 'tag_image', defaultValue: 'lts', description: 'Tag de la imagen de la página.')
+        string(name: 'container_port', defaultValue: '8080', description: 'Puerto que usa el contenedor')
     }
-  }
+
+    stages {
+        stage('build') {
+            steps {
+                script {
+                    docker.image("${image_name}:${tag_image}").stop("${container_name}")
+                    docker.image("${image_name}:${tag_image}").remove(force: true)
+                }
+                dir('jenkins') {
+                    docker.image("${image_name}:${tag_image}").build()
+                }
+            }
+        }
+
+        stage('deploy') {
+            steps {
+                script {
+                    docker.image("${image_name}:${tag_image}").run("-d -p ${container_port}:80 --name ${container_name}")
+                }
+            }
+        }
+    }
 }
