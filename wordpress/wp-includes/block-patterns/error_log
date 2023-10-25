@@ -1,0 +1,16 @@
+[25-Jul-2021 01:40:32 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function _x() in /home1/alekandrita/public_html/wp-includes/block-patterns/query-grid-posts.php:9
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-includes/block-patterns/query-grid-posts.php on line 9
+[25-Jul-2021 01:40:57 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function _x() in /home1/alekandrita/public_html/wp-includes/block-patterns/query-medium-posts.php:9
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-includes/block-patterns/query-medium-posts.php on line 9
+[25-Jul-2021 01:41:21 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function _x() in /home1/alekandrita/public_html/wp-includes/block-patterns/query-offset-posts.php:9
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-includes/block-patterns/query-offset-posts.php on line 9
+[25-Jul-2021 01:41:44 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function _x() in /home1/alekandrita/public_html/wp-includes/block-patterns/query-small-posts.php:9
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-includes/block-patterns/query-small-posts.php on line 9
