@@ -1,0 +1,16 @@
+[24-Mar-2022 11:10:01 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'ParagonIE_Sodium_Core32_Curve25519' not found in /home1/alekandrita/public_html/wp-includes/sodium_compat/src/Core32/Ed25519.php:10
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-includes/sodium_compat/src/Core32/Ed25519.php on line 10
+[24-Mar-2022 11:10:02 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'ParagonIE_Sodium_Core32_Curve25519' not found in /home1/alekandrita/public_html/wp-includes/sodium_compat/src/Core32/Ed25519.php:10
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-includes/sodium_compat/src/Core32/Ed25519.php on line 10
+[26-Mar-2022 07:28:51 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'ParagonIE_Sodium_Core32_Curve25519' not found in /home1/alekandrita/public_html/wp-includes/sodium_compat/src/Core32/Ed25519.php:10
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-includes/sodium_compat/src/Core32/Ed25519.php on line 10
+[26-Mar-2022 07:28:51 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'ParagonIE_Sodium_Core32_Curve25519' not found in /home1/alekandrita/public_html/wp-includes/sodium_compat/src/Core32/Ed25519.php:10
+Stack trace:
+#0 {main}
+  thrown in /home1/alekandrita/public_html/wp-includes/sodium_compat/src/Core32/Ed25519.php on line 10
